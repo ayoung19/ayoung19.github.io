@@ -1,0 +1,15 @@
+a {
+    style: 100%;
+    margin-top: 20px;
+}
+
+.active {
+    background-color: #93d3cd !important;
+}
+.active:hover {
+    cursor: default;
+}
+
+.bad-active {
+    background-color: #93d3cd !important;
+}
