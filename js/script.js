@@ -1,5 +1,5 @@
-for(var i = 0; i < document.getElementsByClassName("block").length; i++) {
-  document.getElementsByClassName("block")[i].style.marginTop = window.innerHeight + "px";
+for(var i = 1; i < document.getElementById("blocks").children.length; i++) {
+  document.getElementById("blocks").children[i].style.marginTop = window.innerHeight + "px";
 }
 setTimeout(function() {
   document.getElementById("block0").style.color = "white";
@@ -36,8 +36,10 @@ document.onscroll = function() {
 function show(id) {
   for(var i = 0; i < document.getElementById("background").children.length; i++) {
     if(document.getElementById("background").children[i].id == id) {
+      document.getElementById("background").children[i].children[1].children[0].play();
       document.getElementById("background").children[i].style.display = "block";
     } else {
+      document.getElementById("background").children[i].children[1].children[0].pause();
       document.getElementById("background").children[i].style.display = "none";
     }
   }
