@@ -36,10 +36,8 @@ document.onscroll = function() {
 function show(id) {
   for(var i = 0; i < document.getElementById("background").children.length; i++) {
     if(document.getElementById("background").children[i].id == id) {
-      document.getElementById("background").children[i].children[1].children[0].play();
       document.getElementById("background").children[i].style.display = "block";
     } else {
-      document.getElementById("background").children[i].children[1].children[0].pause();
       document.getElementById("background").children[i].style.display = "none";
     }
   }
