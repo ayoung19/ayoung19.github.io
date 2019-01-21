@@ -1,18 +1,55 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
 }
 
 #landing {
+  height: 100%;
+  background-color: #3498DB;
+  position: relative;
+}
+
+#landing-logo-wrapper {
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  background-color: #3498DB;
+}
+
+#landing-arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0vh;
+  padding-bottom: 5vh;
+  padding-top: 4vh;
+  width: 100%;
+  cursor: pointer;
+}
+
+#landing-arrow {
+  box-sizing: border-box;
+  height: 40px;
+  width: 40px;
+  border-style: solid;
+  border-color: white;
+  border-width: 0px 2px 2px 0px;
+  transform: rotate(45deg);
+  transition: all 200ms;
 }
 
 #projects {
   height: 100%;
   border-top: #f6af42 5px solid;
+  position: relative;
+}
+
+#projects-anchor {
+  position: absolute;
+  top: 0px;
 }
 
 #projects-title {
