@@ -76,15 +76,37 @@ body {
   width: 1200px;
 }
 
+.block-wrapper {
+  width: 33.33333333%;
+  float: left;
+}
+
 @media only screen and (max-width: 1225px) {
   .responsive-container {
     width: 1000px;
   }
 }
 
-.block-wrapper {
-  width: 33.33333333%;
-  float: left;
+@media only screen and (max-width: 1025px) {
+  .responsive-container {
+    width: 800px;
+  }
+
+  .block-wrapper {
+    width: 50%;
+    float: left;
+  }
+}
+
+@media only screen and (max-width: 825px) {
+  .responsive-container {
+    width: 400px;
+  }
+
+  .block-wrapper {
+    width: 100%;
+    float: left;
+  }
 }
 
 .block-inner {
