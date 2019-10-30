@@ -182,6 +182,26 @@ a {
   color: rgba(52,52,52,0.77);
 }
 
+#social-media-container {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  margin-top: 3vh;
+}
+/*
+.social-media-wrapper:not(:last-child) {
+  border-right: #000 1px solid;
+}
+*/
+.social-media-wrapper {
+  text-decoration: none;
+  padding: 10px;
+}
+
+.social-media-wrapper a {
+  color: #f6af42;
+}
+
 .modal__overlay {
   position: fixed;
   top: 0;
