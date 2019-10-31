@@ -121,6 +121,10 @@ a {
     width: 100%;
     float: left;
   }
+
+  #social-media-container {
+    margin-bottom: 4vh;
+  }
 }
 
 .block-inner {
