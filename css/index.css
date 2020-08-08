@@ -56,7 +56,7 @@ a {
 }
 
 #projects {
-  height: 100vh;
+  height: 100%;
   border-top: #f6af42 5px solid;
   position: relative;
 }
