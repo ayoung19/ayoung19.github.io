@@ -25,6 +25,17 @@ function rectHovered(x, y, rect) {
     }
 }
 
+document.querySelectorAll("#projects-list a").forEach(function(el) {
+  el.addEventListener("click", function(e) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://dashboard.flashbricks.io/clicks", true);
+    xhr.setRequestHeader("Content-Type", "application/json;charset=utf-8");
+    xhr.send(JSON.stringify({
+      url: el.href
+    }));
+  });
+});
+
 /*
 const projects = [
   {
