@@ -10,12 +10,12 @@ document.onmousemove = function(e) {
   }
 }
 
-landing_arrow_wrapper_box.onclick = function() {
-  document.getElementById("projects-anchor").scrollIntoView({
-    behavior: "smooth",
-    block: "start"
+landing_arrow_wrapper_box.addEventListener("click", function(e) {
+  window.scrollTo({
+    top: document.querySelector("#projects-anchor").getBoundingClientRect().top + window.scrollY,
+    behavior: "smooth"
   });
-}
+});
 
 function rectHovered(x, y, rect) {
     if(x > rect.left && x < rect.right && y > rect.top && y < rect.bottom) {
