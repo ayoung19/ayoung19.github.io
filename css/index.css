@@ -59,14 +59,14 @@ i {
 }
 
 .hero-text {
-    margin: 0;
+    margin: 0 0 .25rem 0;
 }
 
 .hero-icons {
-    margin-top: .25rem;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    padding-top: .25rem;
 }
 
 .hero-icons > *:not(:last-child) {
