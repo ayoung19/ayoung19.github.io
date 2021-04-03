@@ -1,61 +1,54 @@
-.dayNight {
+/* shapes the day/night switch */
+#dayNight { 
+ /* allows js to change pseudo elements */
+    --day-opacity: 1;  
+    --night-opacity: 0;
+
     cursor: pointer;
     position: absolute;
     top: 20px;
     right: 30px;
-}
-
-.dayNight input {
-    display: none;
-}
-
-.dayNight input + div {
+    width: 36px;
+    height: 36px; 
     border-radius: 50%;
+    background-color: var(--moon-color);
+    transition: background-color 0.3s linear,
+                transform .3s linear;
+}
+
+#dayNight.day {
+    background-color: var(--sun-color);
+    transform: scale(.5) rotate(45deg);
+}
+/* makes the moon shape */
+#dayNight::after {
+    content: '';
     width: 36px;
     height: 36px;
-    position: relative;
-    box-shadow: inset 16px -16px 0 0 var(--moon-color);
-    transform: scale(1) rotate(-2deg);
-    transition: box-shadow 0.5s ease 0s, transform 0.4s ease 0.1s;
+    border-radius: 50%;
+    background-color: #374151;
+    position: absolute;;
+    left: 15px;
+    bottom: 15px;
+    opacity: var(--night-opacity);
 }
-
-.dayNight input + div:before {
-    content: "";
-    width: inherit;
-    height: inherit;
-    border-radius: inherit;
-    position: absolute;
-    left: 0;
-    top: 0;
-    transition: background 0.3s ease;
-}
-
-.dayNight input + div:after {
-    content: "";
-    width: 8px;
-    height: 8px;
+/* makes the sun shape */
+#dayNight::before {
+    content: '';
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     margin: -4px 0 0 -4px;
-    position: absolute;
     top: 50%;
     left: 50%;
-    box-shadow: 0 -23px 0 var(--sun-color), 0 23px 0 var(--sun-color), 23px 0 0 var(--sun-color), -23px 0 0 var(--sun-color), 15px 15px 0 var(--sun-color), -15px 15px 0 var(--sun-color), 15px -15px 0 var(--sun-color), -15px -15px 0 var(--sun-color);
-    transform: scale(0);
-    transition: all 0.3s ease;
-}
-
-.dayNight input:checked + div {
-    box-shadow: inset 32px -32px 0 0 var(--moon-color);
-    transform: scale(0.5) rotate(0deg);
-    transition: transform 0.3s ease 0.1s, box-shadow 0.2s ease 0s;
-}
-
-.dayNight input:checked + div:before {
-    background: var(--sun-color);
-    transition: background 0.3s ease 0.1s;
-}
-
-.dayNight input:checked + div:after {
-    transform: scale(1.5);
-    transition: transform 0.5s ease 0.15s;
+    position: absolute;
+    box-shadow: 0 -36px 0 #EDA97F, 
+                0 36px 0 #EDA97F, 
+                36px 0 0 #EDA97F, 
+                -36px 0 0 #EDA97F, 
+                23px 23px 0 #EDA97F, 
+                -23px 23px 0 #EDA97F, 
+                23px -23px 0 #EDA97F, 
+                -23px -23px 0 #EDA97F;
+    opacity: var(--day-opacity);
 }

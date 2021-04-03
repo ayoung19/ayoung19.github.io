@@ -1,17 +1,16 @@
-const body = document.querySelector('body');
-const wrapper = document.querySelector('.dayNight');
-const toggle = wrapper.querySelector('input');
+const body = document.body;
+const dayNight = document.getElementById('dayNight');
 
-if (localStorage.getItem('mode') == null) {
-    localStorage.setItem('mode', 'light-mode');
-}
-
-body.classList.value = localStorage.getItem('mode');
-toggle.checked = localStorage.getItem('mode') === 'light-mode' ? true : false;
-wrapper.classList.remove('hidden');
-
-toggle.addEventListener('change', () => {
-    const mode = toggle.checked ? 'light-mode' : 'dark-mode';
-    body.classList.value = mode;
-    localStorage.setItem('mode', mode);
-});
+dayNight.addEventListener('click', function() {
+    dayNight.classList.toggle('day');
+    
+    if (dayNight.classList.value === 'day') {
+        dayNight.style.setProperty('--night-opacity', '0');
+        dayNight.style.setProperty('--day-opacity', '1');
+        body.classList.value = 'light-mode';
+    } else {
+        dayNight.style.setProperty('--night-opacity', '1');
+        dayNight.style.setProperty('--day-opacity', '0');
+        body.classList.value = 'dark-mode';
+    }
+})
